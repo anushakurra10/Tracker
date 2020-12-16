@@ -1,0 +1,23 @@
+<div id="style">
+<h2>Live Tracker</h2>
+<div id="layout">
+<ng-multiselect-dropdown
+  [placeholder]="'Select IMEI devices'"
+  [data]="dropdownList"
+  [settings]="dropdownSettings"
+  (onSelect)="itemSelected($event)"
+  (onSelectAll)="onSelectAll($event)"
+  (onDeSelect)="onItemDeSelect($event)"
+  (onDeSelectAll)="onSelectAll($event)">
+</ng-multiselect-dropdown>
+<button (click)="track()" [disabled]="selectedItems.length == 0" [ngStyle]="{'background-color': (selectedItems.length > 0)? '#ff4081': '#aed2f1'}"
+  class="btn btn-primary">Track Me</button>
+  <div *ngIf="clicked && service.note !=''" id="note">
+    <span> {{service.note}}
+    </span>
+    </div>
+</div>
+
+</div>
+<app-map></app-map>
+
