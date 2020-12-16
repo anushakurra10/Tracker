@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  wsEndpoint:"ws://iswm-dev.acceldash.com"
+  wsEndpoint:"wss://iswm-dev.acceldash.com"
 };
 
 /*
